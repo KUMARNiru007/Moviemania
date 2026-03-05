@@ -30,8 +30,8 @@ export const PosterSlide: React.FC<{ data: MovieData }> = ({ data }) => {
   useEffect(() => {
     const end = Date.now() + 3000;
     const frame = () => {
-      confetti({ particleCount: 2, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#F59E0B', '#8B5CF6', '#EF4444'] });
-      confetti({ particleCount: 2, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#F59E0B', '#8B5CF6', '#EF4444'] });
+      confetti({ particleCount: 2, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#DC2626', '#FACC15', '#FFFFFF'] });
+      confetti({ particleCount: 2, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#DC2626', '#FACC15', '#FFFFFF']});
       if (Date.now() < end) requestAnimationFrame(frame);
     };
     frame();

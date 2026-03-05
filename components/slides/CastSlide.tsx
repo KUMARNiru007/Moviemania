@@ -18,6 +18,7 @@ export const CastSlide: React.FC<{ data: MovieData }> = ({ data }) => {
       <div className="flex-1 flex flex-col justify-center">
         <TextReveal
           text="The people behind the magic."
+           highlight="people"
           className={`text-4xl font-bold mb-10 ${isDark ? 'text-white' : 'text-black'}`}
         />
 

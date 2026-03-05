@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { ThemeProvider } from '@/context/ThemeContext'
 import "./globals.css";
 
@@ -13,8 +13,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
+
+
 export const metadata: Metadata = {
-  title: "Moviemania - Your IMDB Cinematic Wrapped",
+  title: "Moviemania -  AI Movie Insight Builder",
   description: "Enter any IMDB movie ID and experience a stunning cinematic breakdown with AI-powered audience sentiment analysis.",
   keywords: ['IMDB', 'Movie', 'Sentiment Analysis', 'AI', 'Movie Wrapped', 'Cinematic'],
 };
@@ -33,7 +39,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`dark ${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang="en"
+      className={`dark ${geistSans.variable} ${geistMono.variable} ${playfair.variable}`}
+    >
       <head>
        {/* prevent flash script*/}
         <script
@@ -52,7 +61,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
+
+      <body className="font-[var(--font-geist-sans)] antialiased">
         <ThemeProvider>
           {children}
         </ThemeProvider>

@@ -16,6 +16,7 @@ export const TextReveal: React.FC<TextRevealProps> = ({
   delay = 0,
   highlight,
 }) => {
+
   const words = text.split(" ");
 
   
@@ -23,36 +24,55 @@ export const TextReveal: React.FC<TextRevealProps> = ({
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: delay * 0.1 },
-    
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: delay * 0.1,
+      },
     },
   };
 
-
+  /* Word animation */
   const child: Variants = {
-    hidden: { opacity: 0, y: 20 },   
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      y: 0,                   // slides up to normal position
-      transition: { type: "spring", damping: 12, stiffness: 100 },
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
     },
   };
 
   return (
     <motion.div
-      style={{ overflow: "hidden", display: "flex", flexWrap: "wrap", gap: "0.25em" }}
       variants={container}
       initial="hidden"
       animate="visible"
       className={className}
+      style={{
+        overflow: "hidden",
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "0.25em",
+      }}
     >
       {words.map((word, index) => {
-        const isHighlight = highlight && word.includes(highlight);
+
+        /* Remove punctuation for exact highlight match */
+        const cleanWord = word.replace(/[.,!?]/g, "");
+        const isHighlight = highlight && cleanWord === highlight;
+
         return (
           <motion.span
-            variants={child}
             key={index}
-            className={isHighlight ? "text-hero-gold italic font-serif" : ""}
+            variants={child}
+            className={
+              isHighlight
+                ? "text-amber-400 italic font-[var(--font-playfair)] tracking-tight drop-shadow-[0_0_6px_rgba(251,191,36,0.35)]"
+                : ""
+            }
           >
             {word}
           </motion.span>

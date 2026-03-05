@@ -16,6 +16,7 @@ export const PlotSlide: React.FC<{ data: MovieData }> = ({ data }) => {
       <div className="flex-1 flex flex-col justify-center">
         <TextReveal
           text="The story."
+          highlight="story"
           className={`text-4xl font-bold mb-10 ${isDark ? 'text-white' : 'text-black'}`}
         />
 

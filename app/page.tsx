@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { fetchMoviemania } from '@/services/movieService'
 import { MovieData } from '@/types'
 import { StoryContainer } from '@/components/StoryContainer'
-import { Film, Play, Loader2, AlertCircle, Sun, Moon } from 'lucide-react'
+import { Film, Play, Loader2, AlertCircle, Sun, Moon, Github } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from '@/context/ThemeContext'
 
@@ -55,6 +55,15 @@ export default function Home() {
   return (
     <div className={`min-h-[100dvh] flex flex-col items-center justify-center p-6 overflow-hidden relative transition-colors duration-300 ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`}>
 
+      <a
+          href="https://github.com/KUMARNiru007/Moviemania"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`flex gap-1 fixed top-4 right-15 z-50 p-2 rounded-lg text-xs font-medium transition-all border ${isDark ? 'bg-neutral-900 text-neutral-300 border-neutral-800 hover:bg-neutral-800' : 'bg-neutral-100 text-neutral-700 border-neutral-200 hover:bg-neutral-200'}`}
+        >
+          <Github size={14} />
+          <span>Github Repo</span>
+        </a>
       {/* Theme toggle */}
       <button
         onClick={toggleTheme}
@@ -78,7 +87,7 @@ export default function Home() {
           <Film size={64} className="mx-auto mb-6" />
           <h1 className="text-5xl md:text-7xl font-bold mb-2 tracking-tight">Moviemania</h1>
           <p className={`font-mono tracking-widest text-sm uppercase ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>
-            Your IMDB Cinematic Wrapped
+             AI Movie Insight Builder
           </p>
         </div>
 
