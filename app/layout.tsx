@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MovieStory - Your IMDB Cinematic Wrapped",
+  title: "Moviemania - Your IMDB Cinematic Wrapped",
   description: "Enter any IMDB movie ID and experience a stunning cinematic breakdown with AI-powered audience sentiment analysis.",
   keywords: ['IMDB', 'Movie', 'Sentiment Analysis', 'AI', 'Movie Wrapped', 'Cinematic'],
 };
@@ -41,7 +41,7 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var theme = localStorage.getItem('moviestory-theme');
+                  var theme = localStorage.getItem('moviemania-theme');
                   if (theme === 'light') {
                     document.documentElement.classList.remove('dark');
                     document.documentElement.classList.add('light');

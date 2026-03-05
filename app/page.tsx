@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { fetchMovieStory } from '@/services/movieService'
+import { fetchMoviemania } from '@/services/movieService'
 import { MovieData } from '@/types'
 import { StoryContainer } from '@/components/StoryContainer'
 import { Film, Play, Loader2, AlertCircle, Sun, Moon } from 'lucide-react'
@@ -26,7 +26,7 @@ export default function Home() {
     setError(null)
 
     try {
-      const data = await fetchMovieStory(imdbId.trim())
+      const data = await fetchMoviemania(imdbId.trim())
 
       // Preload the poster image before showing slides
       if (data.poster && data.poster !== 'N/A') {
@@ -76,7 +76,7 @@ export default function Home() {
         {/* Logo + Title */}
         <div className="text-center mb-12">
           <Film size={64} className="mx-auto mb-6" />
-          <h1 className="text-5xl md:text-7xl font-bold mb-2 tracking-tight">MovieStory</h1>
+          <h1 className="text-5xl md:text-7xl font-bold mb-2 tracking-tight">Moviemania</h1>
           <p className={`font-mono tracking-widest text-sm uppercase ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>
             Your IMDB Cinematic Wrapped
           </p>

@@ -24,7 +24,7 @@ export const RatingsSlide: React.FC<{ data: MovieData }> = ({ data }) => {
     <SlideLayout gradientStart="#EF4444" gradientEnd="#F59E0B">
       <div className="flex-1 flex flex-col justify-center">
         <TextReveal
-          text="The verdict is in."
+          text="Ratings across platforms"
           className={`text-4xl font-bold mb-10 ${isDark ? 'text-white' : 'text-black'}`}
         />
 

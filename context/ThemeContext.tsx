@@ -17,7 +17,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = localStorage.getItem('moviestory-theme') as Theme;
+    const savedTheme = localStorage.getItem('moviemania-theme') as Theme;
     if (savedTheme) {
       setTheme(savedTheme);
     } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
@@ -28,7 +28,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (mounted) {
       // Update localStorage and document class
-      localStorage.setItem('moviestory-theme', theme);
+      localStorage.setItem('moviemania-theme', theme);
       document.documentElement.classList.remove('dark', 'light');
       document.documentElement.classList.add(theme);
     }

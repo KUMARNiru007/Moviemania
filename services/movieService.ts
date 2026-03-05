@@ -1,7 +1,7 @@
 import { MovieData } from '../types'
 import { MOCK_DATA } from '../constants'
 
-export async function fetchMovieStory(imdbId : string): Promise<MovieData> {
+export async function fetchMoviemania(imdbId : string): Promise<MovieData> {
     if(imdbId.toLocaleLowerCase() === 'demo'){
         return new Promise((resolve) => setTimeout(() => resolve(MOCK_DATA), 1500));
     }

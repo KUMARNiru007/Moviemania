@@ -45,7 +45,7 @@ export const PosterSlide: React.FC<{ data: MovieData }> = ({ data }) => {
     try {
       const dataUrl = await toPng(posterRef.current, { cacheBust: true, pixelRatio: 3 });
       const link = document.createElement('a');
-      link.download = `moviestory-${data.imdbId}.png`;
+      link.download = `moviemania-${data.imdbId}.png`;
       link.href = dataUrl;
       link.click();
       setHasDownloaded(true);
@@ -168,7 +168,7 @@ export const PosterSlide: React.FC<{ data: MovieData }> = ({ data }) => {
             {/* Brand footer */}
             <div className={`mt-3 pt-3 border-t text-center ${isDark ? 'border-neutral-800' : 'border-neutral-200'}`}>
               <p className={`text-[10px] font-mono tracking-[0.2em] uppercase ${isDark ? 'text-neutral-600' : 'text-neutral-400'}`}>
-                moviestory
+                moviemania
               </p>
             </div>
           </div>
@@ -186,7 +186,7 @@ export const PosterSlide: React.FC<{ data: MovieData }> = ({ data }) => {
           }`}
         >
           {isDownloading ? <Loader2 size={18} className="animate-spin" /> : hasDownloaded ? <Check size={18} /> : <Download size={18} />}
-          {isDownloading ? 'Saving...' : hasDownloaded ? 'Saved!' : 'Save Poster'}
+          {isDownloading ? 'Saving...' : hasDownloaded ? 'Saved!' : 'Save Card'}
         </motion.button>
       </div>
     </SlideLayout>

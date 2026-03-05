@@ -44,7 +44,7 @@ export const PlotSlide: React.FC<{ data: MovieData }> = ({ data }) => {
             {data.rated}
           </span>
           <span className={`text-sm font-mono ${isDark ? 'text-neutral-500' : 'text-neutral-400'}`}>
-            $ {data.boxOffice}
+             {data.boxOffice}
           </span>
         </motion.div>
       </div>
