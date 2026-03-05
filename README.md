@@ -241,7 +241,8 @@ Create a `.env.local` file and add:
 
 # Screenshot
 
-    ![Moviemania Screenshot](/image.png)
+   <img width="1919" height="903" alt="Screenshot 2026-03-05 155209" src="https://github.com/user-attachments/assets/c787bf60-3df6-438f-9281-df277533c931" />
+
 
 ------------------------------------------------------------------------
 
